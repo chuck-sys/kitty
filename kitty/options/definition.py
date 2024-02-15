@@ -1210,7 +1210,18 @@ agr('tabbar', 'Tab bar')
 
 opt('tab_bar_edge', 'bottom',
     option_type='tab_bar_edge', ctype='int',
-    long_text='The edge to show the tab bar on, :code:`top` or :code:`bottom`.'
+    long_text='''
+The edge to show the tab bar on, :code:`left`, :code:`top`, :code:`right` or
+:code:`bottom`.
+'''
+    )
+
+opt('tab_bar_width', '40',
+    option_type='tab_bar_width', ctype='int',
+    long_text='''
+(Only applicable when :code:`tab_bar_edge` is :code:`left` or :code:`right`.)
+Set the width of the tab bar (now a side bar) in the number of characters.
+    '''
     )
 
 opt('tab_bar_margin_width', '0.0',

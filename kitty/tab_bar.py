@@ -475,6 +475,17 @@ def load_custom_draw_tab() -> DrawTabFunc:
 
 class TabBar:
 
+    @staticmethod
+    def edge_to_str(edge: int) -> EdgeLiteral:
+        if edge == 0:
+            return 'left'
+        elif edge == 1:
+            return 'top'
+        elif edge == 2:
+            return 'right'
+        else:
+            return 'bottom'
+
     def __init__(self, os_window_id: int):
         self.os_window_id = os_window_id
         self.num_tabs = 1
@@ -520,7 +531,7 @@ class TabBar:
             opts.active_tab_title_template,
             opts.tab_activity_symbol,
             opts.tab_powerline_style,
-            'top' if opts.tab_bar_edge == 1 else 'bottom',
+            TabBar.edge_to_str(opts.tab_bar_edge),
             opts.tab_title_max_length,
         )
         ts = opts.tab_bar_style

@@ -66,6 +66,7 @@ typedef struct {
     bool dynamic_background_opacity;
     float inactive_text_alpha;
     Edge tab_bar_edge;
+    unsigned int tab_bar_width;
     unsigned long tab_bar_min_tabs;
     DisableLigature disable_ligatures;
     bool force_ltr;
